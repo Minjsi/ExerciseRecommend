@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.project.mapper.exercise.ExerciseMapper">
+
+    <!--숄더프레스 등록-->
+    <insert id="shoulderPressInsert">
+        INSERT INTO TBL_SHOULDER_PRESS
+        (NUM, REGIST_DATE, USER_NUM)
+        VALUES(NEXTVAL('SEQ_SHOULDER_PRESS'), now(), #{userNum})
+    </insert>
+
+    <!--숄더프레스 조회-->
+    <select id="shoulderPressSelect" resultType="shoulderPressVO">
+        SELECT REGIST_DATE, USER_NUM, STATUS
+        FROM TBL_SHOULDER_PRESS
+        WHERE USER_NUM=#{userNum} AND REGIST_DATE=TO_DATE(#{registDate},'YYYY-MM-DD')
+    </select>
+
+
+    <!--사이드레터럴레이즈 등록-->
+    <insert id="sideLateralRaiseInsert">
+        INSERT INTO TBL_SIDE_LATERAL_RAISE
+        (NUM, REGIST_DATE, USER_NUM)
+        VALUES(NEXTVAL('SEQ_SIDE_LATERAL_RAISE'), now(), #{userNum})
+    </insert>
+    <!--싯업-->
+    <insert id="sitUpInsert">
+        INSERT INTO TBL_SIT_UP
+        (NUM, REGIST_DATE, USER_NUM)
+        VALUES(NEXTVAL('SEQ_SIT_UP'), now(), #{userNum})
+    </insert>
+    <!--레그레이즈-->
+    <insert id="legRaiseInsert">
+        INSERT INTO TBL_LEG_RAISE
+        (NUM, REGIST_DATE, USER_NUM)
+        VALUES(NEXTVAL('SEQ_LEG_RAISE'), now(), #{userNum})
+    </insert>
+
+    <!--푸쉬업-->
+    <insert id="pushUpInsert">
+        INSERT INTO TBL_PUSHUP
+        (NUM, REGIST_DATE, USER_NUM)
+        VALUES(NEXTVAL('SEQ_PUSHUP'), now(), #{userNum})
+    </insert>
+
+    <!--버피테스트-->
+    <insert id="burpeeInsert">
+        INSERT INTO TBL_BURPEE
+        (NUM, REGIST_DATE, USER_NUM)
+        VALUES(NEXTVAL('SEQ_BURPEE'), now(), #{userNum})
+    </insert>
+
+    <!--슈퍼맨자세-->
+    <insert id="supermanInsert">
+        INSERT INTO TBL_SUPERMAN
+        (NUM, REGIST_DATE, USER_NUM)
+        VALUES(NEXTVAL('SEQ_SUPERMAN'), now(), #{userNum})
+    </insert>
+
+    <!--턱걸이-->
+    <insert id="chinningInsert">
+        INSERT INTO TBL_CHINNING
+        (NUM, REGIST_DATE, USER_NUM)
+        VALUES(NEXTVAL('SEQ_CHINNING'), now(), #{userNum})
+    </insert>
+    <!--스쿼트-->
+    <insert id="squatInsert">
+        INSERT INTO TBL_SQUAT
+        (NUM, REGIST_DATE, USER_NUM)
+        VALUES(NEXTVAL('SEQ_SQUAT'), now(), #{userNum})
+    </insert>
+    <!--런지-->
+    <insert id="lungeInsert">
+        INSERT INTO TBL_LUNGE
+        (NUM, REGIST_DATE, USER_NUM)
+        VALUES(NEXTVAL('SEQ_LUNGE'), now(), #{userNum})
+    </insert>
+
+    <!--달리기-->
+    <insert id="runningInsert">
+        INSERT INTO TBL_RUNNING
+        (NUM, REGIST_DATE, USER_NUM)
+        VALUES(NEXTVAL('SEQ_RUNNING'), now(), #{userNum})
+    </insert>
+
+    <!--자전거-->
+    <insert id="bikingInsert">
+        INSERT INTO TBL_BIKING
+        (NUM, REGIST_DATE, USER_NUM)
+        VALUES(NEXTVAL('SEQ_BIKING'), now(), #{userNum})
+    </insert>
+
+
+
+
+
+
+
+
+
+
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

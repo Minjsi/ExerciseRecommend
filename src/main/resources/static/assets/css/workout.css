@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+
+@font-face {
+    font-family: 'SDSamliphopangche_Basic';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts-20-12@1.0/SDSamliphopangche_Basic.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.notosanskr * {
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+.wrapper-1 {
+    max-width: 960px;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+}
+
+.wrapper {
+    display: block;
+    width: 50%;
+    margin-left: 25%;
+}
+.logo{
+    font-family: 'Openas';
+    margin-left: -2px;
+    display: inline-flex;
+    text-decoration: none;
+    color: rgb(45,97,174);
+}
+.loginh1 {
+    color: #182026;
+    font-weight: 600;
+    line-height: 40px;
+    position: relative;
+    left: 0px;
+    right: 0px;
+    border: 0;
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 376px;
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    align-items: center;
+}
+
+table,td, th{
+    border: 2px solid rgb(230, 228, 228);
+    border-collapse : collapse;
+}
+.worktable{
+    font-size: 14px;
+
+    background-color: white;
+    height: 48px;
+    width: 100%;
+    padding: 0px 10px;
+    box-sizing : border-box;
+}
+
+table th{
+    width: 500px;
+}
+table tr td{
+    width: 300px;
+    text-align: center;
+}
+
+.titleheader{
+    display: inline-block;
+}
+
+.information{
+    display: flex;
+    justify-content: space-between;
+}
+
+select{
+    width: 150px;
+    height: 28px;
+    margin-left: 10px;
+}

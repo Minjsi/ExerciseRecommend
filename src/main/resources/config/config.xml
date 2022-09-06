@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0/EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <typeAliases>
+        <typeAlias type="com.example.project.domain.vo.user.UserVO" alias="userVO"/>
+        <typeAlias type="com.example.project.domain.vo.user.UserDTO" alias="userDTO"/>
+        <typeAlias type="com.example.project.domain.vo.exercise.BikingVO" alias="bikingVO"/>
+        <typeAlias type="com.example.project.domain.vo.exercise.BurpeeVO" alias="burpeeVO"/>
+        <typeAlias type="com.example.project.domain.vo.exercise.ChinningVO" alias="chinningVO"/>
+        <typeAlias type="com.example.project.domain.vo.exercise.LungeVO" alias="lungeVO"/>
+        <typeAlias type="com.example.project.domain.vo.exercise.PushUpVO" alias="pushUpVO"/>
+        <typeAlias type="com.example.project.domain.vo.exercise.RunningVO" alias="runningVO"/>
+        <typeAlias type="com.example.project.domain.vo.exercise.ShoulderPressVO" alias="shoulderPressVO"/>
+        <typeAlias type="com.example.project.domain.vo.exercise.SideLateralRaiseVO" alias="sideLateralRaiseVO"/>
+        <typeAlias type="com.example.project.domain.vo.exercise.SitUpVO" alias="sitUpVO"/>
+        <typeAlias type="com.example.project.domain.vo.exercise.SquatVO" alias="squatVO"/>
+        <typeAlias type="com.example.project.domain.vo.exercise.SupermanVO" alias="supermanVO"/>
+    </typeAliases>
+</configuration>

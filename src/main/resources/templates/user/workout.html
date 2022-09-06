@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>운동목록</title>
+    <link rel="stylesheet" href="/assets/css/workout.css"/>
+
+</head>
+<body>
+<div class="root">
+    <div class="wrapper-1">
+        <div class="wrapper">
+            <div class="titleheader">
+                <h1 class="loginh1">
+                    <a class="logo" href="/user/login">The Join </a>
+                </h1>
+            </div>
+
+            <div class="information">
+                <h5 style="margin-top: 2px; margin-right: 50px;">회원명</h5>
+                <select name="dateSearch" >
+                    <option value="">날짜</option>
+                    <option value="어깨">어깨</option>
+                    <option value="등">등</option>
+                    <option value="복부">복부</option>
+                    <option value="하체">하체</option>
+                </select>
+            </div>
+
+            <table class="worktable">
+                <th>운동순서</th>
+                <th>운동명</th>
+                <th>운동 완료 여부</th>
+                <tr>
+                    <td>1</td>
+                    <td>운동이름</td>
+                    <td><button class="">완료</button></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+</body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</html>

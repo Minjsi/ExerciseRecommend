@@ -1,0 +1,85 @@
+
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>회원가입</title>
+</head>
+<link rel="stylesheet" href="/assets/css/join.css"/>
+
+<body>
+<div class="root">
+    <div class="wrapper-1">
+        <div class="wrapper">
+            <form method="post" action="/user/join" id="joinForm" >
+                    <div class="wrapper-title"><h1 class="join-title">회원가입</h1><span
+                            class="join-title-type">(일반회원)</span></div>
+                    <div class="join-table">
+                        <div class="join-table-title">이메일
+                            <span class="check-text" id="emailCheck_text"> </span></div>
+                        <div class="join-input-table" style="display: flex;">
+                            <input name="email" class="input-data" id="email" placeholder="example@example.com" type="email" onkeydown="CheckEnter(this.form,this)"/>
+                            <button id="emailCheck" type="button" class="emailCheck">중복확인</button>
+                        </div>
+                    </div>
+
+                    <div class="join-table">
+                        <div class="join-table-title">비밀번호<span class="check-text" id="pwCheck_text_first"/></span></div>
+                        <input class="input-data" id="password" placeholder="********" type="password" />
+                    </div>
+
+                    <div class="join-table">
+                        <div class="join-table-title">비밀번호 재확인<span class="check-text" id="pwCheck_text"/></span></div>
+                        <input name="pw" class="input-data" id="password_check" placeholder="********" type="password" />
+                    </div>
+
+                    <div class="join-table">
+                        <div class="join-table-title">현재 키<span class="check-text" id="currentHeight"/></span></div>
+                        <input name="height" class="input-data" type="text" />
+                    </div>
+
+                    <div class="join-table">
+                        <div class="join-table-title">현재 체중<span class="check-text" id="currentWeight"/></span></div>
+                        <input name="currentWeight" class="input-data" type="text" />
+                    </div>
+
+                    <div class="join-table">
+                        <div class="join-table-title">목표 체중<span class="check-text" id="targetWeight"/></span></div>
+                        <input name="targetWeight" class="input-data" type="text" />
+                    </div>
+
+                    <div class="join-table">
+                        <div class="join-table-title">현재 체형<span class="check-text" id="currentShape"/></span></div>
+                        <select name="currentShape" >
+                            <option value="">클릭하여 체형을 선택하세요</option>
+                            <option value="상체 비만">상체 비만</option>
+                            <option value="하체 비만">하체 비만</option>
+                            <option value="전신 과체중">전신 과체중</option>
+                        </select>
+                    </div>
+
+                    <div class="join-table">
+                        <div class="join-table-title">관심 부위<span class="check-text" id=""/></span></div>
+                        <select name="bodyArea" >
+                            <option value="">클릭하여 관심 부위를 선택하세요</option>
+                            <option value="어깨">어깨</option>
+                            <option value="등">등</option>
+                            <option value="복부">복부</option>
+                            <option value="하체">하체</option>
+                        </select>
+                    </div>
+
+                    <input type="submit" class="submit_button" id="submit-user" value="다음"/>
+
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="/assets/js/join.js"></script>
+<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+</html>
