@@ -27,5 +27,9 @@ public class UserDAO {
         return userMapper.emailMatching(email);
     };
 
+    public String findArea(Long num){
+        return userMapper.findArea(num);
+    }
+
 
 }

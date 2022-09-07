@@ -11,4 +11,5 @@ public class LegRaiseVO {
     private String registDate;
     private Long userNum;
     private String areaType;
+    private String areaName;
 }

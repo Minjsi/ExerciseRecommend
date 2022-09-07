@@ -8,6 +8,7 @@
         <typeAlias type="com.example.project.domain.vo.exercise.BurpeeVO" alias="burpeeVO"/>
         <typeAlias type="com.example.project.domain.vo.exercise.ChinningVO" alias="chinningVO"/>
         <typeAlias type="com.example.project.domain.vo.exercise.LungeVO" alias="lungeVO"/>
+        <typeAlias type="com.example.project.domain.vo.exercise.LegRaiseVO" alias="legRaiseVO"/>
         <typeAlias type="com.example.project.domain.vo.exercise.PushUpVO" alias="pushUpVO"/>
         <typeAlias type="com.example.project.domain.vo.exercise.RunningVO" alias="runningVO"/>
         <typeAlias type="com.example.project.domain.vo.exercise.ShoulderPressVO" alias="shoulderPressVO"/>
@@ -15,5 +16,6 @@
         <typeAlias type="com.example.project.domain.vo.exercise.SitUpVO" alias="sitUpVO"/>
         <typeAlias type="com.example.project.domain.vo.exercise.SquatVO" alias="squatVO"/>
         <typeAlias type="com.example.project.domain.vo.exercise.SupermanVO" alias="supermanVO"/>
+        <typeAlias type="com.example.project.domain.vo.exercise.ExerciseDTO" alias="exerciseDTO"/>
     </typeAliases>
 </configuration>

@@ -23,6 +23,13 @@
         WHERE EMAIL=#{email}
     </select>
 
+    <!--기본키에 따른 관심 부위-->
+    <select id="findArea" resultType="string">
+        SELECT BODY_AREA
+        FROM TBL_USER
+        WHERE NUM=#{num}
+    </select>
+
 
 
 </mapper>

@@ -11,4 +11,5 @@ public class ChinningVO {
     private String registDate;
     private Long userNum;
     private String areaType;
+    private String areaName;
 }

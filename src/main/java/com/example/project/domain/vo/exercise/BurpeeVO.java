@@ -11,4 +11,5 @@ public class BurpeeVO {
     private String registDate;
     private Long userNum;
     private String areaType;
+    private String areaName;
 }

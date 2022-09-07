@@ -11,7 +11,7 @@
 
     <!--숄더프레스 조회-->
     <select id="shoulderPressSelect" resultType="shoulderPressVO">
-        SELECT REGIST_DATE, USER_NUM, STATUS
+        SELECT REGIST_DATE, USER_NUM, STATUS, AREA_NAME
         FROM TBL_SHOULDER_PRESS
         WHERE USER_NUM=#{userNum} AND REGIST_DATE=TO_DATE(#{registDate},'YYYY-MM-DD')
     </select>
@@ -23,18 +23,41 @@
         (NUM, REGIST_DATE, USER_NUM)
         VALUES(NEXTVAL('SEQ_SIDE_LATERAL_RAISE'), now(), #{userNum})
     </insert>
+
+    <!--사이드레터럴레이즈 조회-->
+    <select id="sideLateralRaiseSelect" resultType="sideLateralRaiseVO">
+        SELECT REGIST_DATE, USER_NUM, STATUS,AREA_NAME
+        FROM TBL_SIDE_LATERAL_RAISE
+        WHERE USER_NUM=#{userNum} AND REGIST_DATE=TO_DATE(#{registDate},'YYYY-MM-DD')
+    </select>
+
     <!--싯업-->
     <insert id="sitUpInsert">
         INSERT INTO TBL_SIT_UP
         (NUM, REGIST_DATE, USER_NUM)
         VALUES(NEXTVAL('SEQ_SIT_UP'), now(), #{userNum})
     </insert>
+
+    <!--싯업 조회-->
+    <select id="sitUpSelect" resultType="sitUpVO">
+        SELECT REGIST_DATE, USER_NUM, STATUS, AREA_NAME
+        FROM TBL_SIT_UP
+        WHERE USER_NUM=#{userNum} AND REGIST_DATE=TO_DATE(#{registDate},'YYYY-MM-DD')
+    </select>
+
     <!--레그레이즈-->
     <insert id="legRaiseInsert">
         INSERT INTO TBL_LEG_RAISE
         (NUM, REGIST_DATE, USER_NUM)
         VALUES(NEXTVAL('SEQ_LEG_RAISE'), now(), #{userNum})
     </insert>
+
+    <!--레그레이즈 조회-->
+    <select id="legRaiseSelect" resultType="legRaiseVO">
+        SELECT REGIST_DATE, USER_NUM, STATUS, AREA_NAME
+        FROM TBL_LEG_RAISE
+        WHERE USER_NUM=#{userNum} AND REGIST_DATE=TO_DATE(#{registDate},'YYYY-MM-DD')
+    </select>
 
     <!--푸쉬업-->
     <insert id="pushUpInsert">
@@ -43,6 +66,13 @@
         VALUES(NEXTVAL('SEQ_PUSHUP'), now(), #{userNum})
     </insert>
 
+    <!--푸쉬업 조회-->
+    <select id="pushUpSelect" resultType="pushUpVO">
+        SELECT REGIST_DATE, USER_NUM, STATUS, AREA_NAME
+        FROM TBL_PUSHUP
+        WHERE USER_NUM=#{userNum} AND REGIST_DATE=TO_DATE(#{registDate},'YYYY-MM-DD')
+    </select>
+
     <!--버피테스트-->
     <insert id="burpeeInsert">
         INSERT INTO TBL_BURPEE
@@ -50,12 +80,26 @@
         VALUES(NEXTVAL('SEQ_BURPEE'), now(), #{userNum})
     </insert>
 
-    <!--슈퍼맨자세-->
+    <!--푸쉬업 조회-->
+    <select id="burpeeSelect" resultType="burpeeVO">
+        SELECT REGIST_DATE, USER_NUM, STATUS, AREA_NAME
+        FROM TBL_BURPEE
+        WHERE USER_NUM=#{userNum} AND REGIST_DATE=TO_DATE(#{registDate},'YYYY-MM-DD')
+    </select>
+
+    <!--슈퍼맨-->
     <insert id="supermanInsert">
         INSERT INTO TBL_SUPERMAN
         (NUM, REGIST_DATE, USER_NUM)
         VALUES(NEXTVAL('SEQ_SUPERMAN'), now(), #{userNum})
     </insert>
+
+    <!--슈퍼맨 조회-->
+    <select id="supermanSelect" resultType="supermanVO">
+        SELECT REGIST_DATE, USER_NUM, STATUS, AREA_NAME
+        FROM TBL_SUPERMAN
+        WHERE USER_NUM=#{userNum} AND REGIST_DATE=TO_DATE(#{registDate},'YYYY-MM-DD')
+    </select>
 
     <!--턱걸이-->
     <insert id="chinningInsert">
@@ -63,18 +107,41 @@
         (NUM, REGIST_DATE, USER_NUM)
         VALUES(NEXTVAL('SEQ_CHINNING'), now(), #{userNum})
     </insert>
+
+    <!--턱걸이 조회-->
+    <select id="chinningSelect" resultType="chinningVO">
+        SELECT REGIST_DATE, USER_NUM, STATUS, AREA_NAME
+        FROM TBL_CHINNING
+        WHERE USER_NUM=#{userNum} AND REGIST_DATE=TO_DATE(#{registDate},'YYYY-MM-DD')
+    </select>
+
     <!--스쿼트-->
     <insert id="squatInsert">
         INSERT INTO TBL_SQUAT
         (NUM, REGIST_DATE, USER_NUM)
         VALUES(NEXTVAL('SEQ_SQUAT'), now(), #{userNum})
     </insert>
+
+    <!--스쿼트 조회-->
+    <select id="squatSelect" resultType="squatVO">
+        SELECT REGIST_DATE, USER_NUM, STATUS, AREA_NAME
+        FROM TBL_SQUAT
+        WHERE USER_NUM=#{userNum} AND REGIST_DATE=TO_DATE(#{registDate},'YYYY-MM-DD')
+    </select>
+
     <!--런지-->
     <insert id="lungeInsert">
         INSERT INTO TBL_LUNGE
         (NUM, REGIST_DATE, USER_NUM)
         VALUES(NEXTVAL('SEQ_LUNGE'), now(), #{userNum})
     </insert>
+
+    <!--런지 조회-->
+    <select id="lungeSelect" resultType="lungeVO">
+        SELECT REGIST_DATE, USER_NUM, STATUS, AREA_NAME
+        FROM TBL_LUNGE
+        WHERE USER_NUM=#{userNum} AND REGIST_DATE=TO_DATE(#{registDate},'YYYY-MM-DD')
+    </select>
 
     <!--달리기-->
     <insert id="runningInsert">
@@ -83,12 +150,26 @@
         VALUES(NEXTVAL('SEQ_RUNNING'), now(), #{userNum})
     </insert>
 
+    <!--달리기 조회-->
+    <select id="runningSelect" resultType="runningVO">
+        SELECT REGIST_DATE, USER_NUM, STATUS, AREA_NAME
+        FROM TBL_RUNNING
+        WHERE USER_NUM=#{userNum} AND REGIST_DATE=TO_DATE(#{registDate},'YYYY-MM-DD')
+    </select>
+
     <!--자전거-->
     <insert id="bikingInsert">
         INSERT INTO TBL_BIKING
         (NUM, REGIST_DATE, USER_NUM)
         VALUES(NEXTVAL('SEQ_BIKING'), now(), #{userNum})
     </insert>
+
+    <!--자전거 조회-->
+    <select id="bikingSelect" resultType="bikingVO">
+        SELECT REGIST_DATE, USER_NUM, STATUS, AREA_NAME
+        FROM TBL_BIKING
+        WHERE USER_NUM=#{userNum} AND REGIST_DATE=TO_DATE(#{registDate},'YYYY-MM-DD')
+    </select>
 
 
 

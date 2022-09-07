@@ -61,7 +61,10 @@ public class UserController {
 
     @GetMapping("/workout")
     public void workoutList(HttpSession session, Model model){
-        session.getAttribute("num");
+//
+//        Long num=session.getAttribute("num");
+//        String bodyArea=session.getAttribute("bodyArea");
+
 
     }
 
