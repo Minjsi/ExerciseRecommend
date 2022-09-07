@@ -6,7 +6,12 @@ import org.springframework.stereotype.Component;
 @Component
 @Data
 public class ExerciseDTO {
-    
-    private String name;
+
+    private Long num;
     private String status;
+    private String registDate;
+    private Long userNum;
+    private String areaType;
+    private String areaName;
+
 }

@@ -260,7 +260,7 @@ hr{
     transition: background-color 0.1s ease 0s;
 }
 
-@media (max-width: 1580px  ) {
+@media (max-width: 1128px  ) {
     .formdesign{
         flex: 1 1 0%;
         margin:0 auto;

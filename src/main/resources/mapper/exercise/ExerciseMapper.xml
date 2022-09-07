@@ -10,12 +10,18 @@
     </insert>
 
     <!--숄더프레스 조회-->
-    <select id="shoulderPressSelect" resultType="shoulderPressVO">
+    <select id="shoulderPressSelect" resultType="exerciseDTO">
         SELECT REGIST_DATE, USER_NUM, STATUS, AREA_NAME
         FROM TBL_SHOULDER_PRESS
         WHERE USER_NUM=#{userNum} AND REGIST_DATE=TO_DATE(#{registDate},'YYYY-MM-DD')
     </select>
 
+    <!--숄더프레스 수정-->
+    <update id="shoulderCheck">
+        UPDATE TBL_SHOULDER_PRESS
+        SET STATUS='0'
+        WHERE USER_NUM=#{userNum} AND REGIST_DATE=TO_DATE(#{registDate},'YYYY-MM-DD') AND AREA_NAME=${areaName}
+    </update>
 
     <!--사이드레터럴레이즈 등록-->
     <insert id="sideLateralRaiseInsert">
@@ -25,11 +31,18 @@
     </insert>
 
     <!--사이드레터럴레이즈 조회-->
-    <select id="sideLateralRaiseSelect" resultType="sideLateralRaiseVO">
+    <select id="sideLateralRaiseSelect" resultType="exerciseDTO">
         SELECT REGIST_DATE, USER_NUM, STATUS,AREA_NAME
         FROM TBL_SIDE_LATERAL_RAISE
         WHERE USER_NUM=#{userNum} AND REGIST_DATE=TO_DATE(#{registDate},'YYYY-MM-DD')
     </select>
+
+    <!--사이드레터럴레이즈 수정-->
+    <update id="sideLateralRaiseCheck">
+        UPDATE TBL_SIDE_LATERAL_RAISE
+        SET STATUS='0'
+        WHERE USER_NUM=#{userNum} AND REGIST_DATE=TO_DATE(#{registDate},'YYYY-MM-DD')AND AREA_NAME='사이드레터럴레이즈'
+    </update>
 
     <!--싯업-->
     <insert id="sitUpInsert">
@@ -39,11 +52,18 @@
     </insert>
 
     <!--싯업 조회-->
-    <select id="sitUpSelect" resultType="sitUpVO">
+    <select id="sitUpSelect" resultType="exerciseDTO">
         SELECT REGIST_DATE, USER_NUM, STATUS, AREA_NAME
         FROM TBL_SIT_UP
         WHERE USER_NUM=#{userNum} AND REGIST_DATE=TO_DATE(#{registDate},'YYYY-MM-DD')
     </select>
+
+    <!--싯업 수정-->
+    <update id="sitUpCheck">
+        UPDATE TBL_SIT_UP
+        SET STATUS='0'
+        WHERE USER_NUM=#{userNum} AND REGIST_DATE=TO_DATE(#{registDate},'YYYY-MM-DD')AND AREA_NAME='싯업'
+    </update>
 
     <!--레그레이즈-->
     <insert id="legRaiseInsert">
@@ -53,11 +73,18 @@
     </insert>
 
     <!--레그레이즈 조회-->
-    <select id="legRaiseSelect" resultType="legRaiseVO">
+    <select id="legRaiseSelect" resultType="exerciseDTO">
         SELECT REGIST_DATE, USER_NUM, STATUS, AREA_NAME
         FROM TBL_LEG_RAISE
         WHERE USER_NUM=#{userNum} AND REGIST_DATE=TO_DATE(#{registDate},'YYYY-MM-DD')
     </select>
+
+    <!--레그레이즈 수정-->
+    <update id="legRaiseCheck">
+        UPDATE TBL_LEG_RAISE
+        SET STATUS='0'
+        WHERE USER_NUM=#{userNum} AND REGIST_DATE=TO_DATE(#{registDate},'YYYY-MM-DD')AND AREA_NAME='레그레이즈'
+    </update>
 
     <!--푸쉬업-->
     <insert id="pushUpInsert">
@@ -67,25 +94,39 @@
     </insert>
 
     <!--푸쉬업 조회-->
-    <select id="pushUpSelect" resultType="pushUpVO">
+    <select id="pushUpSelect" resultType="exerciseDTO">
         SELECT REGIST_DATE, USER_NUM, STATUS, AREA_NAME
         FROM TBL_PUSHUP
         WHERE USER_NUM=#{userNum} AND REGIST_DATE=TO_DATE(#{registDate},'YYYY-MM-DD')
     </select>
 
-    <!--버피테스트-->
+    <!--푸쉬업 수정-->
+    <update id="pushUpCheck">
+        UPDATE TBL_PUSHUP
+        SET STATUS='0'
+        WHERE USER_NUM=#{userNum} AND REGIST_DATE=TO_DATE(#{registDate},'YYYY-MM-DD')AND AREA_NAME='푸쉬업'
+    </update>
+
+    <!--버피-->
     <insert id="burpeeInsert">
         INSERT INTO TBL_BURPEE
         (NUM, REGIST_DATE, USER_NUM)
         VALUES(NEXTVAL('SEQ_BURPEE'), now(), #{userNum})
     </insert>
 
-    <!--푸쉬업 조회-->
-    <select id="burpeeSelect" resultType="burpeeVO">
+    <!--버피 조회-->
+    <select id="burpeeSelect" resultType="exerciseDTO">
         SELECT REGIST_DATE, USER_NUM, STATUS, AREA_NAME
         FROM TBL_BURPEE
         WHERE USER_NUM=#{userNum} AND REGIST_DATE=TO_DATE(#{registDate},'YYYY-MM-DD')
     </select>
+
+    <!--버피 수정-->
+    <update id="burpeeCheck">
+        UPDATE TBL_BURPEE
+        SET STATUS='0'
+        WHERE USER_NUM=#{userNum} AND REGIST_DATE=TO_DATE(#{registDate},'YYYY-MM-DD')AND AREA_NAME='버피'
+    </update>
 
     <!--슈퍼맨-->
     <insert id="supermanInsert">
@@ -95,11 +136,18 @@
     </insert>
 
     <!--슈퍼맨 조회-->
-    <select id="supermanSelect" resultType="supermanVO">
+    <select id="supermanSelect" resultType="exerciseDTO">
         SELECT REGIST_DATE, USER_NUM, STATUS, AREA_NAME
         FROM TBL_SUPERMAN
         WHERE USER_NUM=#{userNum} AND REGIST_DATE=TO_DATE(#{registDate},'YYYY-MM-DD')
     </select>
+
+    <!--슈퍼맨 수정-->
+    <update id="supermanCheck">
+        UPDATE TBL_SUPERMAN
+        SET STATUS='0'
+        WHERE USER_NUM=#{userNum} AND REGIST_DATE=TO_DATE(#{registDate},'YYYY-MM-DD')AND AREA_NAME='슈퍼맨'
+    </update>
 
     <!--턱걸이-->
     <insert id="chinningInsert">
@@ -109,11 +157,18 @@
     </insert>
 
     <!--턱걸이 조회-->
-    <select id="chinningSelect" resultType="chinningVO">
+    <select id="chinningSelect" resultType="exerciseDTO">
         SELECT REGIST_DATE, USER_NUM, STATUS, AREA_NAME
         FROM TBL_CHINNING
         WHERE USER_NUM=#{userNum} AND REGIST_DATE=TO_DATE(#{registDate},'YYYY-MM-DD')
     </select>
+
+    <!--턱걸이 수정-->
+    <update id="chinningCheck">
+        UPDATE TBL_CHINNING
+        SET STATUS='0'
+        WHERE USER_NUM=#{userNum} AND REGIST_DATE=TO_DATE(#{registDate},'YYYY-MM-DD')AND AREA_NAME='턱걸이'
+    </update>
 
     <!--스쿼트-->
     <insert id="squatInsert">
@@ -123,11 +178,18 @@
     </insert>
 
     <!--스쿼트 조회-->
-    <select id="squatSelect" resultType="squatVO">
+    <select id="squatSelect" resultType="exerciseDTO">
         SELECT REGIST_DATE, USER_NUM, STATUS, AREA_NAME
         FROM TBL_SQUAT
         WHERE USER_NUM=#{userNum} AND REGIST_DATE=TO_DATE(#{registDate},'YYYY-MM-DD')
     </select>
+
+    <!--스쿼트 수정-->
+    <update id="squatCheck">
+        UPDATE TBL_SQUAT
+        SET STATUS='0'
+        WHERE USER_NUM=#{userNum} AND REGIST_DATE=TO_DATE(#{registDate},'YYYY-MM-DD')AND AREA_NAME='스쿼트'
+    </update>
 
     <!--런지-->
     <insert id="lungeInsert">
@@ -137,11 +199,18 @@
     </insert>
 
     <!--런지 조회-->
-    <select id="lungeSelect" resultType="lungeVO">
+    <select id="lungeSelect" resultType="exerciseDTO">
         SELECT REGIST_DATE, USER_NUM, STATUS, AREA_NAME
         FROM TBL_LUNGE
         WHERE USER_NUM=#{userNum} AND REGIST_DATE=TO_DATE(#{registDate},'YYYY-MM-DD')
     </select>
+
+    <!--런지 수정-->
+    <update id="lungeCheck">
+        UPDATE TBL_LUNGE
+        SET STATUS='0'
+        WHERE USER_NUM=#{userNum} AND REGIST_DATE=TO_DATE(#{registDate},'YYYY-MM-DD')AND AREA_NAME='런지'
+    </update>
 
     <!--달리기-->
     <insert id="runningInsert">
@@ -151,11 +220,18 @@
     </insert>
 
     <!--달리기 조회-->
-    <select id="runningSelect" resultType="runningVO">
+    <select id="runningSelect" resultType="exerciseDTO">
         SELECT REGIST_DATE, USER_NUM, STATUS, AREA_NAME
         FROM TBL_RUNNING
         WHERE USER_NUM=#{userNum} AND REGIST_DATE=TO_DATE(#{registDate},'YYYY-MM-DD')
     </select>
+
+    <!--달리기 수정-->
+    <update id="runningCheck">
+        UPDATE TBL_RUNNING
+        SET STATUS='0'
+        WHERE USER_NUM=#{userNum} AND REGIST_DATE=TO_DATE(#{registDate},'YYYY-MM-DD')AND AREA_NAME='달리기'
+    </update>
 
     <!--자전거-->
     <insert id="bikingInsert">
@@ -165,11 +241,25 @@
     </insert>
 
     <!--자전거 조회-->
-    <select id="bikingSelect" resultType="bikingVO">
+    <select id="bikingSelect" resultType="exerciseDTO">
         SELECT REGIST_DATE, USER_NUM, STATUS, AREA_NAME
         FROM TBL_BIKING
         WHERE USER_NUM=#{userNum} AND REGIST_DATE=TO_DATE(#{registDate},'YYYY-MM-DD')
     </select>
+
+    <!--자전거 수정-->
+    <update id="bikingCheck">
+        UPDATE TBL_BIKING
+        SET STATUS='0'
+        WHERE USER_NUM=#{userNum} AND REGIST_DATE=TO_DATE(#{registDate},'YYYY-MM-DD')AND AREA_NAME='자전거'
+    </update>
+
+<!--    운동 전부 조회-->
+<!--    <select id="excerciseList" resultType="excerciseDTO">-->
+<!--        SELECT REGIST_DATE, USER_NUM, STATUS, AREA_NAME-->
+<!--        FROM TBL_BIKING-->
+<!--        WHERE USER_NUM=#{userNum} AND REGIST_DATE=TO_DATE(#{registDate},'YYYY-MM-DD')-->
+<!--    </select>-->
 
 
 

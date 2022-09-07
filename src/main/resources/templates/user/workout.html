@@ -19,7 +19,8 @@
             </div>
 
             <div class="information">
-                <h5 style="margin-top: 2px; margin-right: 50px;">회원명</h5>
+                <h5 style="margin-top: 2px; margin-right: 50px;"
+                    th:text="${session.email}"></h5>
                 <select name="dateSearch" >
                     <option value="">날짜</option>
                     <option value="어깨">어깨</option>
@@ -33,11 +34,17 @@
                 <th>운동순서</th>
                 <th>운동명</th>
                 <th>운동 완료 여부</th>
+                <th:block th:each="exerciseDTO, status:${exerciseDTOList}">
                 <tr>
-                    <td>1</td>
-                    <td>운동이름</td>
-                    <td><button class="">완료</button></td>
+                    <td th:text="${status.count}"></td>
+                    <td th:text="${exerciseDTO.areaName}"></td>
+
+                    <td th:if="${exerciseDTO.status}==1" >
+                        <a th:href="@{/user/exerciseCheck/(areaName=${exerciseDTO.areaName})}"> 확인</a>
+                        </td>
+                    <td th:if="${exerciseDTO.status}==0"> 완료 </td>
                 </tr>
+                </th:block>
             </table>
         </div>
     </div>
@@ -46,4 +53,33 @@
 
 </body>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" th:inline="javascript">
+
+    // let userNum=[[${num}]];
+    //
+    //
+    // //모듈화-가독성과 재사용성
+    //
+    //     function exerciseCheck(areaName,callback,error) {
+    //         $.ajax({
+    //             url: "/userR/exerciseCheck",
+    //             type: "get",
+    //             data: {
+    //                     areaName:areaName},
+    //             success: function (result) {
+    //                 if(callback){
+    //                     callback(result);
+    //                 }
+    //             },
+    //             error: function (xhr, status, er) {
+    //                 if(error){
+    //                     error(xhr, status, er);
+    //                 }
+    //                 console.log(xhr, status, er);
+    //             }
+    //         })
+    //     }
+
+
+</script>
 </html>

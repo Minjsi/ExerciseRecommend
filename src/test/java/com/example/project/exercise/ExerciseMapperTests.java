@@ -1,5 +1,6 @@
 package com.example.project.exercise;
 
+import com.example.project.domain.vo.exercise.ExerciseDTO;
 import com.example.project.domain.vo.exercise.ShoulderPressVO;
 import com.example.project.mapper.exercise.ExerciseMapper;
 import lombok.extern.slf4j.Slf4j;
@@ -20,8 +21,8 @@ public class ExerciseMapperTests {
     }
     @Test
     public void shoulderPressSelectTest(){
-        ShoulderPressVO shoulderPressVO=exerciseMapper.shoulderPressSelect(2L,"2022-09-06");
-        log.info("숄더프레스 조회 " + shoulderPressVO.getRegistDate());
+        ExerciseDTO exerciseDTO =exerciseMapper.shoulderPressSelect(2L,"2022-09-06");
+        log.info("숄더프레스 조회 " + exerciseDTO.getRegistDate());
     }
 
 }

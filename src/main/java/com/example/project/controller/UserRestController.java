@@ -1,12 +1,13 @@
 package com.example.project.controller;
 
+import com.example.project.service.exercise.ExerciseService;
 import com.example.project.service.user.UserService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 @RestController
 @Slf4j
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class UserRestController {
 
     private final UserService userService;
+    private final ExerciseService exerciseService;
 
     //이메일 중복확인
     @PostMapping("/emailMatching")
@@ -23,4 +25,6 @@ public class UserRestController {
         log.info("email test 갯수 : "+ userService.emailcheck(email));
         return userService.emailcheck(email);
     }
+
+
 }
