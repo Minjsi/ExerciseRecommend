@@ -24,5 +24,13 @@ public class ExerciseMapperTests {
         ExerciseDTO exerciseDTO =exerciseMapper.shoulderPressSelect(2L,"2022-09-06");
         log.info("숄더프레스 조회 " + exerciseDTO.getRegistDate());
     }
+    @Test
+    public void shoulderPressUpdateTest(){
+        exerciseMapper.shoulderPressCheck(11L,"2022-09-08", "숄더프레스");
+        ExerciseDTO exerciseDTO =exerciseMapper.shoulderPressSelect(11L,"2022-09-08");
+        log.info("숄더프레스 조회 " + exerciseDTO.getRegistDate());
+        log.info("숄더프레스 상태 " + exerciseDTO.getStatus());
+
+    }
 
 }

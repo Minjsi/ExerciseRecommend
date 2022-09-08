@@ -38,32 +38,6 @@ dependencies {
 	annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
-//dependencies {
-//	implementation 'org.springframework.boot:spring-boot-starter-data-jdbc'
-//
-//	//log.info
-//	implementation 'org.springframework.boot:spring-boot-starter-log4j2'
-//
-//	implementation 'org.springframework.boot:spring-boot-starter-freemarker'
-//	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
-//
-//	implementation 'org.springframework.boot:spring-boot-starter-web'
-//	implementation 'org.springframework.boot:spring-boot-starter-web-services'
-//	implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:2.2.2'
-//	developmentOnly 'org.springframework.boot:spring-boot-devtools'
-//
-//	//LOMBOK Dependencies
-//	compileOnly 'org.projectlombok:lombok'
-//	annotationProcessor 'org.projectlombok:lombok'
-//	testAnnotationProcessor 'org.projectlombok:lombok'
-//	testImplementation 'org.projectlombok:lombok'
-//
-//	runtimeOnly 'org.postgresql:postgresql'
-//	annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
-//	annotationProcessor 'org.projectlombok:lombok'
-//	testImplementation 'org.springframework.boot:spring-boot-starter-test'
-//	testCompile('org.springframework.boot:spring-boot-starter-test')
-//}
 
 tasks.named('test') {
 	useJUnitPlatform()

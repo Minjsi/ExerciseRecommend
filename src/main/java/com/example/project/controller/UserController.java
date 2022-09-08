@@ -1,5 +1,6 @@
 package com.example.project.controller;
 
+import com.example.project.domain.vo.exercise.ExerciseDTO;
 import com.example.project.domain.vo.user.UserVO;
 import com.example.project.service.exercise.ExerciseService;
 import com.example.project.service.user.UserService;
@@ -15,6 +16,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.List;
 
 @Controller
 @Slf4j
@@ -36,9 +38,17 @@ public class UserController {
 
 
     @GetMapping("/login")
-    public void login() {
+    public String login(HttpSession session) {
+        if(session.getAttribute("email")!=null) {
+            log.info("세션 확인 : " + session.getAttribute("email"));
+            session.invalidate();
+        }
+
+        log.info("로그인 화면");
+        return "/user/login";
     }
 
+//로그인
     @PostMapping("/login")
     public RedirectView loginForm(String email, String pw,
                                   RedirectAttributes rttr,
@@ -56,12 +66,14 @@ public class UserController {
             rttr.addFlashAttribute("num", userVO.getNum());
 
             return new RedirectView("/user/workout");
-        }else{
+        }
+        log.info("정보 일치 않음 : "+userVO.getEmail());
         rttr.addFlashAttribute("msg","입력된 정보가 틀립니다. 회원가입해주세요.");
         return new RedirectView("/user/login");
-        }
+
     }
 
+//    로그인 후 운동목록 보기
     @GetMapping("/workout")
     public String workoutList(HttpSession session, Model model){
         log.info("session 확인"+session.getAttribute("num"));
@@ -77,16 +89,43 @@ public class UserController {
 //         포맷 적용
             String formatedNow = now.format(formatter);
 
-           model.addAttribute("exerciseDTOList",exerciseService.findExercise(num,formatedNow));
+            session.setAttribute("todayDate",formatedNow);
+
+            List<ExerciseDTO> exerciseDTOList=exerciseService.findExercise(num,formatedNow);
+            model.addAttribute("exerciseDTOList",exerciseDTOList);
+
+            int count=0;
+
+            for(ExerciseDTO exerciseDTO: exerciseDTOList){
+                log.info("for문");
+                log.info("참 거짓"+exerciseDTO.getStatus().equals("1"));
+
+
+                if (exerciseDTO.getStatus().equals("1")) {
+                    log.info("참 거짓"+exerciseDTO.getStatus().equals("1"));
+                    count+=1;
+                    log.info("count 개수"+count);
+                }
+                else if(exerciseDTO.getStatus().equals("0")){
+                    count+=0;
+                }else {
+                    log.info("bad");
+                }
+
+            }
+            if (count==0){
+                model.addAttribute("msg","운동을 완료 했습니다");
+                log.info("count==0");
+            }
+
 
            log.info("모델 받고 돌아 오는가");
 
            return "user/workout";
-
     }
 
     @GetMapping("/exerciseCheck")
-    public String exerciseCheck(HttpSession session, String areaName){
+    public RedirectView exerciseCheck(HttpSession session, String areaName){
 
         Long userNum=(Long)session.getAttribute("num");
         log.info("exercise test 띄워짐? : "+userNum);
@@ -101,7 +140,7 @@ public class UserController {
         log.info("exercise test : ");
         exerciseService.exerciseCheck(userNum,formatedNow,areaName);
 
-        return "user/workout";
+        return new RedirectView("/user/workout");
     }
 
 

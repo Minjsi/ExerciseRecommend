@@ -19,15 +19,20 @@
             </div>
 
             <div class="information">
-                <h5 style="margin-top: 2px; margin-right: 50px;"
-                    th:text="${session.email}"></h5>
-                <select name="dateSearch" >
-                    <option value="">날짜</option>
-                    <option value="어깨">어깨</option>
-                    <option value="등">등</option>
-                    <option value="복부">복부</option>
-                    <option value="하체">하체</option>
-                </select>
+                <div class="information2">
+                    <h5 style="margin-top: 2px; margin-right: 5px;">이메일 : </h5>
+                    <h5 style="margin-top: 2px; margin-right: 50px;"
+                        th:text="${session.email}"></h5>
+                    <h5 style="margin-top: 2px; margin-right: 5px;">관심 부위 : </h5>
+                    <h5 style="margin-top: 2px; margin-right: 50px;"
+                        th:text="${session.bodyArea}"></h5>
+                </div>
+                <div>
+                    <select name="dateSearch" >
+                        <option th:text="${session.todayDate}" value=""></option>
+                        <option value="어깨">기록했던 날짜</option>
+                    </select>
+                </div>
             </div>
 
             <table class="worktable">
@@ -40,7 +45,7 @@
                     <td th:text="${exerciseDTO.areaName}"></td>
 
                     <td th:if="${exerciseDTO.status}==1" >
-                        <a th:href="@{/user/exerciseCheck/(areaName=${exerciseDTO.areaName})}"> 확인</a>
+                        <a th:href="@{/user/exerciseCheck/(areaName=${exerciseDTO.areaName})}"> 확인 </a>
                         </td>
                     <td th:if="${exerciseDTO.status}==0"> 완료 </td>
                 </tr>
@@ -54,32 +59,11 @@
 </body>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script type="text/javascript" th:inline="javascript">
-
-    // let userNum=[[${num}]];
-    //
-    //
-    // //모듈화-가독성과 재사용성
-    //
-    //     function exerciseCheck(areaName,callback,error) {
-    //         $.ajax({
-    //             url: "/userR/exerciseCheck",
-    //             type: "get",
-    //             data: {
-    //                     areaName:areaName},
-    //             success: function (result) {
-    //                 if(callback){
-    //                     callback(result);
-    //                 }
-    //             },
-    //             error: function (xhr, status, er) {
-    //                 if(error){
-    //                     error(xhr, status, er);
-    //                 }
-    //                 console.log(xhr, status, er);
-    //             }
-    //         })
-    //     }
-
-
+    let message = [[${msg}]];
+    console.log(message);
+    if(message!=null){
+    alert(message);
+    }
 </script>
+
 </html>

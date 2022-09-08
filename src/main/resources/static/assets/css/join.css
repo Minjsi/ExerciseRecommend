@@ -193,3 +193,7 @@ select {
 /* select::-ms-expand {
     display: none;
  } */
+
+.titleheader{
+    display: inline-block;
+}

@@ -17,6 +17,7 @@ body {
 
 .wrapper-1 {
     max-width: 960px;
+    min-width: 800px;
     position: relative;
     margin-left: auto;
     margin-right: auto;
@@ -25,8 +26,8 @@ body {
 
 .wrapper {
     display: block;
-    width: 50%;
-    margin-left: 25%;
+    width: 80%;
+    margin-left: 10%;
 }
 .logo{
     font-family: 'Openas';
@@ -83,6 +84,10 @@ table tr td{
     display: flex;
     justify-content: space-between;
 }
+.information2{
+    display: flex;
+}
+
 
 select{
     width: 150px;

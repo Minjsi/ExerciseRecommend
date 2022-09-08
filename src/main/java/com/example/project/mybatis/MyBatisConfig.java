@@ -43,7 +43,9 @@ public class MyBatisConfig {
 
         try {
             SqlSessionFactory sqlSessionFactory = sqlSessionFactoryBean.getObject();
+
             sqlSessionFactory.getConfiguration().setMapUnderscoreToCamelCase(true);
+
             return sqlSessionFactory;
 
         } catch (Exception e) {

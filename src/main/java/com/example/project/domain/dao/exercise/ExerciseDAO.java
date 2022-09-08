@@ -162,10 +162,6 @@ public void sitUpRegister(Long userNum){
         log.info("숄더 함수");
         log.info("운동이름"+areaName);
 
-
-        if(areaName.equals("숄더프레스")){
-            log.info("숄더프레스");
-        }
         switch(areaName){
             case "숄더프레스":
                 log.info("case 숄더프레스 : " + areaName);

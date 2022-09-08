@@ -17,10 +17,10 @@
     </select>
 
     <!--숄더프레스 수정-->
-    <update id="shoulderCheck">
+    <update id="shoulderPressCheck">
         UPDATE TBL_SHOULDER_PRESS
         SET STATUS='0'
-        WHERE USER_NUM=#{userNum} AND REGIST_DATE=TO_DATE(#{registDate},'YYYY-MM-DD') AND AREA_NAME=${areaName}
+        WHERE USER_NUM=#{userNum} AND REGIST_DATE=TO_DATE(#{registDate},'YYYY-MM-DD') AND AREA_NAME=#{areaName}
     </update>
 
     <!--사이드레터럴레이즈 등록-->
@@ -41,7 +41,7 @@
     <update id="sideLateralRaiseCheck">
         UPDATE TBL_SIDE_LATERAL_RAISE
         SET STATUS='0'
-        WHERE USER_NUM=#{userNum} AND REGIST_DATE=TO_DATE(#{registDate},'YYYY-MM-DD')AND AREA_NAME='사이드레터럴레이즈'
+        WHERE USER_NUM=#{userNum} AND REGIST_DATE=TO_DATE(#{registDate},'YYYY-MM-DD') AND AREA_NAME=#{areaName}
     </update>
 
     <!--싯업-->
@@ -62,7 +62,7 @@
     <update id="sitUpCheck">
         UPDATE TBL_SIT_UP
         SET STATUS='0'
-        WHERE USER_NUM=#{userNum} AND REGIST_DATE=TO_DATE(#{registDate},'YYYY-MM-DD')AND AREA_NAME='싯업'
+        WHERE USER_NUM=#{userNum} AND REGIST_DATE=TO_DATE(#{registDate},'YYYY-MM-DD') AND AREA_NAME=#{areaName}
     </update>
 
     <!--레그레이즈-->
@@ -83,7 +83,7 @@
     <update id="legRaiseCheck">
         UPDATE TBL_LEG_RAISE
         SET STATUS='0'
-        WHERE USER_NUM=#{userNum} AND REGIST_DATE=TO_DATE(#{registDate},'YYYY-MM-DD')AND AREA_NAME='레그레이즈'
+        WHERE USER_NUM=#{userNum} AND REGIST_DATE=TO_DATE(#{registDate},'YYYY-MM-DD') AND AREA_NAME=#{areaName}
     </update>
 
     <!--푸쉬업-->
@@ -104,7 +104,7 @@
     <update id="pushUpCheck">
         UPDATE TBL_PUSHUP
         SET STATUS='0'
-        WHERE USER_NUM=#{userNum} AND REGIST_DATE=TO_DATE(#{registDate},'YYYY-MM-DD')AND AREA_NAME='푸쉬업'
+        WHERE USER_NUM=#{userNum} AND REGIST_DATE=TO_DATE(#{registDate},'YYYY-MM-DD') AND AREA_NAME=#{areaName}
     </update>
 
     <!--버피-->
@@ -125,7 +125,7 @@
     <update id="burpeeCheck">
         UPDATE TBL_BURPEE
         SET STATUS='0'
-        WHERE USER_NUM=#{userNum} AND REGIST_DATE=TO_DATE(#{registDate},'YYYY-MM-DD')AND AREA_NAME='버피'
+        WHERE USER_NUM=#{userNum} AND REGIST_DATE=TO_DATE(#{registDate},'YYYY-MM-DD') AND AREA_NAME=#{areaName}
     </update>
 
     <!--슈퍼맨-->
@@ -146,7 +146,7 @@
     <update id="supermanCheck">
         UPDATE TBL_SUPERMAN
         SET STATUS='0'
-        WHERE USER_NUM=#{userNum} AND REGIST_DATE=TO_DATE(#{registDate},'YYYY-MM-DD')AND AREA_NAME='슈퍼맨'
+        WHERE USER_NUM=#{userNum} AND REGIST_DATE=TO_DATE(#{registDate},'YYYY-MM-DD') AND AREA_NAME=#{areaName}
     </update>
 
     <!--턱걸이-->
@@ -167,7 +167,7 @@
     <update id="chinningCheck">
         UPDATE TBL_CHINNING
         SET STATUS='0'
-        WHERE USER_NUM=#{userNum} AND REGIST_DATE=TO_DATE(#{registDate},'YYYY-MM-DD')AND AREA_NAME='턱걸이'
+        WHERE USER_NUM=#{userNum} AND REGIST_DATE=TO_DATE(#{registDate},'YYYY-MM-DD') AND AREA_NAME=#{areaName}
     </update>
 
     <!--스쿼트-->
@@ -188,7 +188,7 @@
     <update id="squatCheck">
         UPDATE TBL_SQUAT
         SET STATUS='0'
-        WHERE USER_NUM=#{userNum} AND REGIST_DATE=TO_DATE(#{registDate},'YYYY-MM-DD')AND AREA_NAME='스쿼트'
+        WHERE USER_NUM=#{userNum} AND REGIST_DATE=TO_DATE(#{registDate},'YYYY-MM-DD') AND AREA_NAME=#{areaName}
     </update>
 
     <!--런지-->
@@ -209,7 +209,7 @@
     <update id="lungeCheck">
         UPDATE TBL_LUNGE
         SET STATUS='0'
-        WHERE USER_NUM=#{userNum} AND REGIST_DATE=TO_DATE(#{registDate},'YYYY-MM-DD')AND AREA_NAME='런지'
+        WHERE USER_NUM=#{userNum} AND REGIST_DATE=TO_DATE(#{registDate},'YYYY-MM-DD') AND AREA_NAME=#{areaName}
     </update>
 
     <!--달리기-->
@@ -230,7 +230,7 @@
     <update id="runningCheck">
         UPDATE TBL_RUNNING
         SET STATUS='0'
-        WHERE USER_NUM=#{userNum} AND REGIST_DATE=TO_DATE(#{registDate},'YYYY-MM-DD')AND AREA_NAME='달리기'
+        WHERE USER_NUM=#{userNum} AND REGIST_DATE=TO_DATE(#{registDate},'YYYY-MM-DD') AND AREA_NAME=#{areaName}
     </update>
 
     <!--자전거-->
@@ -251,7 +251,7 @@
     <update id="bikingCheck">
         UPDATE TBL_BIKING
         SET STATUS='0'
-        WHERE USER_NUM=#{userNum} AND REGIST_DATE=TO_DATE(#{registDate},'YYYY-MM-DD')AND AREA_NAME='자전거'
+        WHERE USER_NUM=#{userNum} AND REGIST_DATE=TO_DATE(#{registDate},'YYYY-MM-DD') AND AREA_NAME=#{areaName}
     </update>
 
 <!--    운동 전부 조회-->
